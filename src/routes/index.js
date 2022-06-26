@@ -2,7 +2,8 @@ const express = require("express");
 const routes = express.Router();
 
 const shopsController = require("../domain/shops/controllers/shopsController");
-const productsController = require("../domain/shops/controllers/productsController")
+const productsController = require("../domain/shops/controllers/productsController");
+const categoryController = require("../domain/shops/controllers/categoryController");
 
 // routes.get("/login/shops", products.create);
 // routes.get("/login/clients", products.create);
@@ -26,6 +27,10 @@ routes.post("/products", productsController.create);
 // routes.post("/products", products.create);
 // routes.put("/products/:idProduct", products.create);
 // routes.delete("/products/:idProduct", products.create);
+
+
+routes.get("/category", categoryController.list);
+routes.post("/category", categoryController.create);
 
 // routes.get("/clients", clients.create);
 // routes.get("/clients/:id", clients.create);
